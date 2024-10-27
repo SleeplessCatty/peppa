@@ -99,7 +99,7 @@ function next() {
                 <button
                     class="btn btn-outline"
                     :disabled="page.current <= 1"
-                    @click="page.current--"
+                    @click="page.current--, restore()"
                 >
                     上一页
                 </button>
@@ -107,7 +107,7 @@ function next() {
                 <button
                     class="btn btn-outline"
                     :disabled="page.current >= page.total"
-                    @click="page.current++"
+                    @click="page.current++, restore()"
                 >
                     下一页
                 </button>
