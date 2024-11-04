@@ -8,7 +8,7 @@ const back = () => router.back()
 
 const ep = computed(() => Number((route.params as EpisodeRouteParams).ep))
 
-const { input, noInput } = useInput()
+const { input } = useInput()
 const { check: checkSentence } = useCheck()
 const { speak, isSupported: isSpeechSupported } = useSpeech()
 const { epNum, title, sentence, page, nextPage, markPage } = usePage(ep)
@@ -18,7 +18,6 @@ const showResult = ref(false)
 const nextButtonText = computed(() => (page.isLast ? '下一集' : '继续'))
 
 function check() {
-    if (noInput.value) return
     if (showResult.value && !result.value) return restore()
     if (showResult.value && result.value) return next()
 
@@ -125,7 +124,6 @@ function next() {
             <button
                 v-show="!showResult"
                 class="btn btn-neutral lg:w-32"
-                :disabled="noInput"
                 @click="check"
             >
                 检查
