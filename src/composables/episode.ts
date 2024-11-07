@@ -72,9 +72,11 @@ export function usePage(ep: Ref<number>) {
 
     const sentence = computed(() => episode.value.sentences[page.index])
 
+    const title = computed(() => episode.value.titleCN)
+
     return {
         epNum,
-        title: episode.value.titleCN,
+        title,
         page,
         sentence,
         nextPage,

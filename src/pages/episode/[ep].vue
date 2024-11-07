@@ -102,7 +102,7 @@ function next() {
                 >
                     上一页
                 </button>
-                &nbsp;&nbsp;&nbsp;
+                &nbsp;
                 <button
                     class="btn btn-outline"
                     :disabled="page.current >= page.total"
@@ -110,7 +110,7 @@ function next() {
                 >
                     下一页
                 </button>
-                &nbsp;&nbsp;&nbsp;
+                &nbsp;
                 <input
                     v-model="page.current"
                     type="number"
@@ -118,7 +118,7 @@ function next() {
                     :min="1"
                     :max="page.total"
                 />
-                &nbsp;&nbsp;/&nbsp;
+                &nbsp;
                 <span>{{ page.total }}</span>
             </div>
             <button
